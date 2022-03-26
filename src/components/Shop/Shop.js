@@ -33,15 +33,11 @@ const Shop = () => {
             }
             return car.name;
         })
+    }
 
-
-
-        // cart.find( car => {
-        //     if (cart.indexOf(randProduct)) {
-        //         console.log(car)
-        //     }
-        //     return car;
-        // })
+    const resetCart = () => {
+        const removeCart = [];
+        setCart(removeCart);
     }
 
 
@@ -56,12 +52,12 @@ const Shop = () => {
             </div>
 
             <div className='cart-container'>
-                <h3>Selected Item {cart.length}</h3>
+                <h3>Selected Item</h3>
                     { cart.map( car => <Cart key = {car.id} cart = {car}></Cart> )}
 
                 <div className='btn-section'>
                     <button onClick={() => randomSelect(cart.id)}>CHOOSE 1 FOR ME</button>
-                    <button>CHOOSE AGAIN</button>
+                    <button onClick={resetCart}>CHOOSE AGAIN</button>
                 </div>
             </div>
         </div>
