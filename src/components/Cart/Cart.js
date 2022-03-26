@@ -13,6 +13,7 @@ const Cart = (props) => {
             <p className='cart-item'>{cart.name}</p>
                 
             
+            
             {/* { carts.map( cart => <p>{cart.name}</p> ) } */}
         </div>
     );
