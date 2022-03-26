@@ -8,6 +8,13 @@
     gap: 50px;
     margin-left: 20px;
 }
+
+.cart-container{
+    background-color: cyan;
+    position: sticky;
+    top: 0px;
+}
+
 .btn-section button{
     display: block;
     margin-bottom: 10px;

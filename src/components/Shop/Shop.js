@@ -6,11 +6,24 @@ import "./Shop.css";
 const Shop = () => {
     const [products, setProduct] = useState([]);
 
+    const [cart, setCart] = useState([]);
+
+
     useEffect( () => {
         fetch('products.json')
         .then(res => res.json())
         .then(data => setProduct(data))
     }, []);
+
+    // handle cart event listener here
+    const addToCart = (selectedProduct) => {
+        const newCart = [...cart, selectedProduct];
+        if (newCart.length >= 5) {
+            alert("Max is 4")
+        } else {
+            setCart(newCart);
+        }
+    }
 
 
 
@@ -19,14 +32,15 @@ const Shop = () => {
 
             <div className="product-container">
                 {
-                    products.map( product => <Product key = {product.id} product = {product}></Product>)
+                    products.map( product => <Product key = {product.id} product = {product} addToCart={addToCart}></Product>)
                 }
             </div>
 
             <div className='cart-container'>
-                <h3>Selected Item</h3>
-                <Cart></Cart>
-                <div className='btn-section'>
+                <h3>Selected Item {cart.length}</h3>
+                    { cart.map( car => <Cart key = {car.id} cart = {car}></Cart> )}
+
+                    <div className='btn-section'>
                     <button>CHOOSE 1 FOR ME</button>
                     <button>CHOOSE AGAIN</button>
                 </div>
