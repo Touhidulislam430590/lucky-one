@@ -1,5 +1,5 @@
 # PAD store
-Live web page Link ( https://github.com/facebook/create-react-app ).
+Live website Link from Netlify ( https://sparkly-brioche-57c886.netlify.app/ ).
 
 # Getting Started with Create React App
 

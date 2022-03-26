@@ -11,8 +11,10 @@
 
 .cart-container{
     background-color: cyan;
+    padding: 10px;
     position: sticky;
-    top: 0px;
+    position: -webkit-sticky;
+    top: 0;
 }
 
 .btn-section button{
